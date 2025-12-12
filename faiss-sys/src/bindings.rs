@@ -348,11 +348,41 @@ pub struct FaissClusteringParameters {
     pub decode_block_size: usize,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
+#[cfg(not(target_family = "wasm"))]
 const _: () = {
     ["Size of FaissClusteringParameters"]
         [::std::mem::size_of::<FaissClusteringParameters>() - 48usize];
     ["Alignment of FaissClusteringParameters"]
         [::std::mem::align_of::<FaissClusteringParameters>() - 8usize];
+    ["Offset of field: FaissClusteringParameters::niter"]
+        [::std::mem::offset_of!(FaissClusteringParameters, niter) - 0usize];
+    ["Offset of field: FaissClusteringParameters::nredo"]
+        [::std::mem::offset_of!(FaissClusteringParameters, nredo) - 4usize];
+    ["Offset of field: FaissClusteringParameters::verbose"]
+        [::std::mem::offset_of!(FaissClusteringParameters, verbose) - 8usize];
+    ["Offset of field: FaissClusteringParameters::spherical"]
+        [::std::mem::offset_of!(FaissClusteringParameters, spherical) - 12usize];
+    ["Offset of field: FaissClusteringParameters::int_centroids"]
+        [::std::mem::offset_of!(FaissClusteringParameters, int_centroids) - 16usize];
+    ["Offset of field: FaissClusteringParameters::update_index"]
+        [::std::mem::offset_of!(FaissClusteringParameters, update_index) - 20usize];
+    ["Offset of field: FaissClusteringParameters::frozen_centroids"]
+        [::std::mem::offset_of!(FaissClusteringParameters, frozen_centroids) - 24usize];
+    ["Offset of field: FaissClusteringParameters::min_points_per_centroid"]
+        [::std::mem::offset_of!(FaissClusteringParameters, min_points_per_centroid) - 28usize];
+    ["Offset of field: FaissClusteringParameters::max_points_per_centroid"]
+        [::std::mem::offset_of!(FaissClusteringParameters, max_points_per_centroid) - 32usize];
+    ["Offset of field: FaissClusteringParameters::seed"]
+        [::std::mem::offset_of!(FaissClusteringParameters, seed) - 36usize];
+    ["Offset of field: FaissClusteringParameters::decode_block_size"]
+        [::std::mem::offset_of!(FaissClusteringParameters, decode_block_size) - 40usize];
+};
+#[cfg(target_family = "wasm")]
+const _: () = {
+    ["Size of FaissClusteringParameters"]
+        [::std::mem::size_of::<FaissClusteringParameters>() - 44usize];
+    ["Alignment of FaissClusteringParameters"]
+        [::std::mem::align_of::<FaissClusteringParameters>() - 4usize];
     ["Offset of field: FaissClusteringParameters::niter"]
         [::std::mem::offset_of!(FaissClusteringParameters, niter) - 0usize];
     ["Offset of field: FaissClusteringParameters::nredo"]
@@ -853,11 +883,20 @@ pub struct FaissBuffer {
     pub dis: *mut f32,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
+#[cfg(not(target_family = "wasm"))]
 const _: () = {
     ["Size of FaissBuffer"][::std::mem::size_of::<FaissBuffer>() - 16usize];
     ["Alignment of FaissBuffer"][::std::mem::align_of::<FaissBuffer>() - 8usize];
     ["Offset of field: FaissBuffer::ids"][::std::mem::offset_of!(FaissBuffer, ids) - 0usize];
     ["Offset of field: FaissBuffer::dis"][::std::mem::offset_of!(FaissBuffer, dis) - 8usize];
+};
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+#[cfg(target_family = "wasm")]
+const _: () = {
+    ["Size of FaissBuffer"][::std::mem::size_of::<FaissBuffer>() - 8usize];
+    ["Alignment of FaissBuffer"][::std::mem::align_of::<FaissBuffer>() - 4usize];
+    ["Offset of field: FaissBuffer::ids"][::std::mem::offset_of!(FaissBuffer, ids) - 0usize];
+    ["Offset of field: FaissBuffer::dis"][::std::mem::offset_of!(FaissBuffer, dis) - 4usize];
 };
 unsafe extern "C" {
     pub fn faiss_BufferList_append_buffer(bl: *mut FaissBufferList) -> ::std::os::raw::c_int;
@@ -1142,6 +1181,7 @@ pub struct FaissIndexIVFStats {
     pub search_time: f64,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
+#[cfg(not(target_family = "wasm"))]
 const _: () = {
     ["Size of FaissIndexIVFStats"][::std::mem::size_of::<FaissIndexIVFStats>() - 48usize];
     ["Alignment of FaissIndexIVFStats"][::std::mem::align_of::<FaissIndexIVFStats>() - 8usize];
@@ -1157,6 +1197,24 @@ const _: () = {
         [::std::mem::offset_of!(FaissIndexIVFStats, quantization_time) - 32usize];
     ["Offset of field: FaissIndexIVFStats::search_time"]
         [::std::mem::offset_of!(FaissIndexIVFStats, search_time) - 40usize];
+};
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+#[cfg(target_family = "wasm")]
+const _: () = {
+    ["Size of FaissIndexIVFStats"][::std::mem::size_of::<FaissIndexIVFStats>() - 32usize];
+    ["Alignment of FaissIndexIVFStats"][::std::mem::align_of::<FaissIndexIVFStats>() - 8usize];
+    ["Offset of field: FaissIndexIVFStats::nq"]
+        [::std::mem::offset_of!(FaissIndexIVFStats, nq) - 0usize];
+    ["Offset of field: FaissIndexIVFStats::nlist"]
+        [::std::mem::offset_of!(FaissIndexIVFStats, nlist) - 4usize];
+    ["Offset of field: FaissIndexIVFStats::ndis"]
+        [::std::mem::offset_of!(FaissIndexIVFStats, ndis) - 8usize];
+    ["Offset of field: FaissIndexIVFStats::nheap_updates"]
+        [::std::mem::offset_of!(FaissIndexIVFStats, nheap_updates) - 12usize];
+    ["Offset of field: FaissIndexIVFStats::quantization_time"]
+        [::std::mem::offset_of!(FaissIndexIVFStats, quantization_time) - 16usize];
+    ["Offset of field: FaissIndexIVFStats::search_time"]
+        [::std::mem::offset_of!(FaissIndexIVFStats, search_time) - 24usize];
 };
 unsafe extern "C" {
     pub fn faiss_IndexIVFStats_reset(stats: *mut FaissIndexIVFStats);
