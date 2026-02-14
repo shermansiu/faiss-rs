@@ -1,0 +1,21 @@
+[env]
+# CC = "gcc-15"
+# CXX = "g++-15"
+
+# CMAKE_C_COMPILER = "/opt/homebrew/bin/gcc-15"
+# CMAKE_CXX_COMPILER = "/opt/homebrew/bin/g++-15"
+
+AR = "/opt/homebrew/opt/llvm/bin/llvm-ar"
+CC = "/opt/homebrew/opt/llvm/bin/clang"
+CXX = "/opt/homebrew/opt/llvm/bin/clang++"
+
+CMAKE_C_COMPILER = "/opt/homebrew/opt/llvm/bin/clang"
+CMAKE_CXX_COMPILER = "/opt/homebrew/opt/llvm/bin/clang++"
+
+CMAKE_PREFIX_PATH = "/opt/homebrew/opt/openblas"
+
+LDFLAGS = "-L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/openblas/lib"
+CXXFLAGS = "-I/opt/homebrew/opt/libomp/include -I/opt/homebrew/opt/openblas/include"
+
+[target.wasm32-unknown-unknown]
+rustflags = ['--cfg', 'getrandom_backend="wasm_js"']
